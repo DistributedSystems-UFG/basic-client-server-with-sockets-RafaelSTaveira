@@ -8,3 +8,42 @@ Este template corresponde ao exemplo da Fig. 2.3 do livro. O exercício consiste
 Tarefa individual.
 
 Incluir um Readme descritivo do sistema implementado.
+
+# ClientServerBasics 2.0
+
+## Descrição
+Este projeto implementa um sistema cliente-servidor em Python usando sockets TCP.
+O servidor oferece múltiplas funcionalidades remotas, permitindo que o cliente envie uma ou mais operações em uma única requisição.
+
+## Funcionalidades implementadas
+- soma
+- subtração
+- multiplicação
+- divisão
+- potência
+- fatorial
+- verificação de número primo
+- média
+
+## Formato da requisição
+O cliente pode enviar uma ou mais operações separadas por ponto e vírgula.
+
+Exemplo:
+soma 10 5; multiplica 3 4; fatorial 5; primo 17
+
+## Exemplo de resposta
+soma 10 5 = 15
+multiplica 3 4 = 12
+fatorial 5 = 120
+primo 17 = True
+
+## Como executar
+
+### Servidor
+python3 server.py
+
+### Cliente
+python3 client.py
+
+## Observação
+O cliente usa o IP privado do servidor definido em constCS.py.

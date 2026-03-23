@@ -1,9 +1,32 @@
-from socket  import *
-from constCS import * #-
+from socket import *
+from constCS import SERVER_HOST, PORT, BUFFER_SIZE
 
-s = socket(AF_INET, SOCK_STREAM)
-s.connect((HOST, PORT)) # connect to server (block until accepted)
-s.send(str.encode('Hello, world'))  # send some data
-data = s.recv(1024)     # receive the response
-print (bytes.decode(data))            # print the result
-s.close()               # close the connection
+def main():
+    print("Cliente iniciado.")
+    print(f"Conectando em {SERVER_HOST}:{PORT}")
+
+    while True:
+        requisicao = input("\nDigite a requisição (ou 'sair'): ").strip()
+
+        if requisicao.lower() == "sair":
+            print("Encerrando cliente.")
+            break
+
+        if not requisicao:
+            print("Digite algum comando.")
+            continue
+
+        s = socket(AF_INET, SOCK_STREAM)
+        s.connect((SERVER_HOST, PORT))
+        s.send(requisicao.encode())
+
+        data = s.recv(BUFFER_SIZE)
+        resposta = data.decode()
+
+        print("\nResposta do servidor:")
+        print(resposta)
+
+        s.close()
+
+if __name__ == "__main__":
+    main()

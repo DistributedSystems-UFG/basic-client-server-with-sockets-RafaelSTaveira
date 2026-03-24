@@ -13,22 +13,20 @@ Incluir um Readme descritivo do sistema implementado.
 
 ## Descrição
 Este projeto implementa um sistema cliente-servidor em Python usando sockets TCP.
-O servidor oferece múltiplas funcionalidades remotas, permitindo que o cliente envie uma ou mais operações em uma única requisição.
+
+O servidor foi estendido para oferecer múltiplas funcionalidades de processamento remoto, tornando a comunicação mais útil do que o exemplo básico apresentado em aula.
+
+Além disso, o cliente pode solicitar mais de uma funcionalidade em uma única requisição, separando os comandos por ponto e vírgula.
 
 ## Funcionalidades implementadas
 - soma
 - subtração
 - multiplicação
 - divisão
-- potência
 - fatorial
 - verificação de número primo
-- média
 
-## Formato da requisição
-O cliente pode enviar uma ou mais operações separadas por ponto e vírgula.
-
-Exemplo:
+## Exemplo de requisição
 soma 10 5; multiplica 3 4; fatorial 5; primo 17
 
 ## Exemplo de resposta
@@ -39,11 +37,6 @@ primo 17 = True
 
 ## Como executar
 
-### Servidor
-python3 server.py
-
-### Cliente
-python3 client.py
-
-## Observação
-O cliente usa o IP privado do servidor definido em constCS.py.
+### 1. Servidor
+```bash
+python server.py
